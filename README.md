@@ -1,7 +1,7 @@
 PLUTO Data Service
 ==================
 
-To help jumpstart some interesting analysis and visualization built on the PLUTO dataset, we have created a CartoDB instance dedicated to hosting this data for you. 
+To help jumpstart some interesting analysis and visualizations built on the PLUTO dataset, we have created a CartoDB instance dedicated to hosting this data for you. 
 
 
 ## Versions
