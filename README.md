@@ -1,8 +1,9 @@
 PLUTO Data Service
 ==================
 
-To help jumpstart some interesting analysis and visualizations built on the PLUTO dataset, we have created a CartoDB instance dedicated to hosting this data for you. 
+[![header - owner by type](http://i.imgur.com/KYQ8Soy.png)](http://andrewxhill.github.io/cartodb-pluto/examples/owner_type.html)
 
+To help jumpstart some interesting analysis and visualizations built on the PLUTO dataset, we have created a CartoDB instance dedicated to hosting this data for you. 
 
 ## Versions
 
