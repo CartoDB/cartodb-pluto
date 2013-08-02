@@ -99,8 +99,7 @@ You can use SQL statements to filter the data on your maps or to access JSON or 
 
 ## Contact
 
-Andrew Hill
-[@andrewxhill](http://twitter.com/andrewxhill)
-andrew@vizzuality.com 
+Andrew Hill | [@andrewxhill](http://twitter.com/andrewxhill) | andrew@vizzuality.com 
 
+Hosting provided by [CartoDB](http://cartodb.com)
 
