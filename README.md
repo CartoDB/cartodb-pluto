@@ -45,7 +45,7 @@ If you want to use the data in a programming language such as Javascript or Pyth
 
 ## Maps
 
-![default maps](http://i.imgur.com/PDUeTIU.png)
+![default maps](http://i.imgur.com/IGWCYNx.png)
 
 Maps are available for each of the latest versions of the PLUTO datasets.
 
