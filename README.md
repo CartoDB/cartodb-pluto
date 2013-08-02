@@ -97,6 +97,12 @@ You can use SQL statements to filter the data on your maps or to access JSON or 
  * [Filtered maps](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md#example-3)
  * [JSON request](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md#getting-data-with-sql)
 
+##### Style on the fly
+
+[![owner type](http://i.imgur.com/GdLFlIx.png)](http://andrewxhill.github.io/cartodb-pluto/examples/owner_type.html)
+
+You can style the maps on the fly using the Javascript library. Above is an example of the Bronx styled by the ```ownertype``` column. Click the image to see the live example. 
+
 ## Contact
 
 Andrew Hill | [@andrewxhill](http://twitter.com/andrewxhill) | andrew@vizzuality.com 

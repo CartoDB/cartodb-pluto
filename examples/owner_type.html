@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PLUTO example | CartoDB.js</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
+    <style>
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
+    <![endif]-->
+  </head>
+  <body>
+    <div id="map"></div>
+    
+    <!-- include cartodb.js library -->
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+
+    <script>
+      function main() {
+        var map = L.map('map').setView([40.85290355725105, -73.85765075683594], 13);
+
+        // set a base layer 
+        L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+          attribution: 'stamen http://maps.stamen.com/'
+        }).addTo(map);
+
+        // add the cartodb layer
+        var layerUrl = 'http://pluto.cartodb.com/api/v2/viz/19652da8-fbb7-11e2-a75b-6139856afd6d/viz.json';
+        cartodb.createLayer(map, layerUrl)
+          .addTo(map)
+          .done(function(layers){
+            layers
+              .getSubLayer(0)
+              .set({
+                cartocss: '#layer { polygon-opacity: 0.7; line-width: 0; line-color: #FFF; line-opacity: 0.1;} #layer[ownertype="P"] { polygon-fill: #A6CEE3;} #layer[ownertype="C"] { polygon-fill: #1F78B4;} #layer[ownertype="X"] { polygon-fill: #B2DF8A;} #layer[ownertype="O"] { polygon-fill: #33A02C; } #layer[ownertype="M"] { polygon-fill: #FB9A99; } #layer[ownertype=null] { polygon-fill: #E31A1C; }'
+              });
+          });
+      }
+      // The above style is a concatenated version of the below
+
+      // #bx_mappluto_13v1 {
+      //    polygon-opacity: 0.7;
+      //    line-width: 0;
+      //    line-color: #FFF;
+      //    line-opacity: 0.1;
+      // }
+      // #bx_mappluto_13v1[ownertype="P"] {
+      //    polygon-fill: #A6CEE3;
+      // }
+      // #bx_mappluto_13v1[ownertype="C"] {
+      //    polygon-fill: #1F78B4;
+      // }
+      // #bx_mappluto_13v1[ownertype="X"] {
+      //    polygon-fill: #B2DF8A;
+      // }
+      // #bx_mappluto_13v1[ownertype="O"] {
+      //    polygon-fill: #33A02C;
+      // }
+      // #bx_mappluto_13v1[ownertype="M"] {
+      //    polygon-fill: #FB9A99;
+      // }
+      // #bx_mappluto_13v1[ownertype=null] {
+      //    polygon-fill: #E31A1C;
+      // }
+
+      window.onload = main;
+    </script>
+  </body>
+</html>
