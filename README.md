@@ -11,6 +11,12 @@ To help jumpstart some interesting analysis and visualizations built on the PLUT
 * **Available**
   * 13.1
 
+## Example uses
+
+ * [Create maps of NYC data](http://andrewxhill.github.io/cartodb-examples/scroll-story/pluto/index.html)
+ * Find the average floor size of an NYC neighborhood
+ * [Build a reverse geocoder](Some examples of interesting SQL requests)
+
 ## Data
 
 Data is stored on CartoDB as individual tables in the same way that the [NYC.gov](http://www.nyc.gov/html/dcp/html/bytes/dwn_pluto_mappluto.shtml) website provides them. The naming schema is as follows
@@ -79,6 +85,59 @@ You can get more details on customizing the maps on the [CartoDB.js](https://git
 
 See this [working example](http://andrewxhill.github.io/cartodb-pluto/examples/basic.html) to get started.
 
+##### CartoCSS
+
+
+[![owner type](http://i.imgur.com/GdLFlIx.png)](http://andrewxhill.github.io/cartodb-pluto/examples/owner_type.html)
+
+You can style the maps on the fly using the Javascript library. Above is an example of the Bronx styled by the ```ownertype``` column. Click the image to see the live example. Another example would be to apply the building-height style to create maps similar to the following,
+
+![building-height](http://i.imgur.com/2mhAYAJ.png)
+
+The particular CartoCSS used here is,
+
+```css
+ #mn_mappluto_13v1{ 
+   building-fill: #084081; 
+   building-height: 512; 
+   [ numfloors <= 64] { 
+     building-fill: #0868AC; 
+     building-height: 256; 
+     [ numfloors <= 32] { 
+       building-fill: #2B8CBE; 
+       building-height: 128; 
+       [ numfloors <= 16] { 
+         building-fill: #7BCCC4; 
+         building-height: 64; 
+         [ numfloors <= 8] { 
+           building-fill: #A8DDB5; 
+           building-height: 32; 
+           [ numfloors <= 4] { 
+             building-fill: #CCEBC5; 
+             building-height: 16; 
+             [ numfloors <= 2] { 
+             building-fill: #E0F3DB; 
+             [ numfloors = 1] { 
+               building-fill: #F7FCF0; 
+               building-fill-opacity: 0.6; 
+             }
+             [ numfloors = 0] { 
+               building-fill: #EEE; 
+               building-fill-opacity: 0.6; 
+             }
+           }
+         }
+       }
+     }
+   } 
+   [ numfloors= null] { 
+     building-fill: #ccc; 
+     building-fill-opacity: 0.6; 
+     building-height: 0; 
+   } 
+ }
+```
+
 ##### Viz.JSON
 
 To change use any of the datasets in the CartoDB.js visualizations, you need to change the ```layerUrl``` parameter in the example to the correct one for the desired dataset. Below are the dataset viz.json URLs,
@@ -98,11 +157,11 @@ You can use SQL statements to filter the data on your maps or to access JSON or 
  * [Filtered maps](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md#example-3)
  * [JSON request](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md#getting-data-with-sql)
 
-##### Style on the fly
+Some examples of interesting SQL requests.
 
-[![owner type](http://i.imgur.com/GdLFlIx.png)](http://andrewxhill.github.io/cartodb-pluto/examples/owner_type.html)
+  * Find the nearest [link](http://pluto.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20pluto_reverse_geocode(40.792276,-73.968219,3))
+    * ```SELECT * pluto_reverse_geocode(40.792276,-73.968219,3)```
 
-You can style the maps on the fly using the Javascript library. Above is an example of the Bronx styled by the ```ownertype``` column. Click the image to see the live example. 
 
 ## Contact
 
