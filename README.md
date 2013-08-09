@@ -159,7 +159,7 @@ You can use SQL statements to filter the data on your maps or to access JSON or 
 
 Some examples of interesting SQL requests.
 
-  * Find the nearest 
+  * Find the nearest building to a LatLng
     * http://pluto.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20pluto_reverse_geocode(40.792276,-73.968219,3)
 
 
