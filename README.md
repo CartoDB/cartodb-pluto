@@ -15,7 +15,7 @@ To help jumpstart some interesting analysis and visualizations built on the PLUT
 
  * [Create maps of NYC data](http://andrewxhill.github.io/cartodb-examples/scroll-story/pluto/index.html)
  * Find the average floor size of an NYC neighborhood
- * [Build a reverse geocoder](Some examples of interesting SQL requests)
+ * [Build a reverse geocoder](client-side-sql)
 
 ## Data
 
